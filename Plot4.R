@@ -1,0 +1,8 @@
+par(mfrow = c(2,2))
+plot(Global_active_power ~ datetime, smaindata, type = "l", xlab = "", ylab = "Global Active Power (kilowats)")
+plot(Voltage ~ datetime, smaindata, type ="l", ylab ="Voltage")
+with(smaindata, plot(Sub_metering_1 ~ datetime, type ="l", xlab = "", ylab ="Energy sub metering"))
+with(smaindata, lines(Sub_metering_2 ~ datetime, type ="l", col = "red"))
+with(smaindata, lines(Sub_metering_3 ~ datetime, type ="l", col = "blue"))
+legend("topright", col = c("black","red","blue"), pch= "__", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+plot(Global_reactive_power ~ datetime, smaindata, type="l")
